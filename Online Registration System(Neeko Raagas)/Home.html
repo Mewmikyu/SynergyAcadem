@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Defines the document as an HTML5 document and sets the language to English -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Sets the character encoding to UTF-8 to support various characters -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures the page is responsive on all screen sizes -->
+
+    <title>Dashboard</title>
+    <!--the title of the webpage -->
+
+    <style>
+        /* Global styles for the page */
+        body {
+            margin: 0;
+            /* Removes default margins */
+            font-family: Arial, sans-serif;
+            /* Sets a clean and readable font */
+            background-image: linear-gradient(white, #8c06da);
+            /* Adds a gradient background */
+            color: black;
+            /* Default text color */
+            overflow-x: hidden;
+            /* Prevents horizontal scrolling */
+        }
+
+        /* Header styles */
+        .header {
+            background-color: #8c06da;
+            /* Purple background */
+            color: white;
+            /* White text color */
+            padding: 25px 20px;
+            /* Adds padding around the content */
+            text-align: left;
+            /* Aligns text to the left */
+            font-size: 36px;
+            /* Large font size for emphasis */
+            font-weight: bold;
+            /* Bold text */
+            display: flex;
+            /* Uses flex layout */
+            gap: 20px;
+            /* Adds space between elements */
+        }
+
+        .header img {
+            height: 50px;
+            /* Sets logo size */
+            border-radius: 50%;
+            /* Makes the logo circular */
+        }
+
+        /* Profile icon styles */
+        .profile-icon {
+            display: flex;
+            /* Aligns image and text horizontally */
+            align-items: center;
+            /* Centers content vertically */
+            gap: 10px;
+            /* Adds space between the image and text */
+            text-decoration: none;
+            /* Removes underline */
+            color: white;
+            /* Sets text color */
+            position: absolute;
+            /* Positions element relative to the page */
+            top: 20px;
+            /* Places it 20px from the top */
+            right: 20px;
+            /* Places it 20px from the right */
+            pointer-events: none;
+            /* Makes the icon unclickable */
+            cursor: default;
+            /* Sets default cursor */
+        }
+
+        .profile-icon img {
+            width: 40px;
+            /* Profile image size */
+            height: 40px;
+            border-radius: 50%;
+            /* Makes it circular */
+            border: 2px solid white;
+            /* Adds a white border */
+        }
+
+        .profile-icon span {
+            font-size: 18px;
+            /* Text size for the greeting */
+            font-weight: bold;
+            /* Bold text */
+        }
+
+        /* Sidebar styles */
+        .sidebar {
+            background-color: black;
+            /* Dark background */
+            color: white;
+            /* White text */
+            width: 200px;
+            /* Fixed sidebar width */
+            height: 100vh;
+            /* Full viewport height */
+            position: fixed;
+            /* Keeps it in place when scrolling */
+            top: 100px;
+            /* Starts below the header */
+            left: 0;
+            /* Aligns to the left of the screen */
+            padding-top: 20px;
+            /* Adds spacing at the top */
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            /* Adds shadow */
+        }
+
+        .sidebar a {
+            display: block;
+            /* Makes links appear as blocks */
+            color: white;
+            /* Link text color */
+            text-decoration: none;
+            /* Removes underline */
+            padding: 10px 20px;
+            /* Adds padding around links */
+            transition: background-color 0.3s;
+            /* Smooth hover effect */
+        }
+
+        .sidebar a:hover {
+            background-color: #8c06da;
+            /* Changes color on hover */
+        }
+
+        /* Main content styles */
+        .main-content {
+            margin-left: 200px;
+            /* Leaves space for the sidebar */
+            padding: 20px;
+            /* Adds padding inside the content */
+            min-height: calc(100vh - 120px);
+            /* Ensures proper height */
+            box-sizing: border-box;
+            /* Includes padding in width/height */
+        }
+
+        /* Content box styles */
+        .content-box,
+        .content-box2 {
+            position: relative;
+            /* Positions boxes relative to their parent */
+            height: 290px;
+            /* Fixed height */
+            width: 450px;
+            /* Fixed width */
+            background-color: rgba(48, 5, 105, 0.1);
+            /* Light purple background */
+            border: 1px solid rgba(48, 5, 105, 0.5);
+            /* Slightly darker border */
+            border-radius: 10px;
+            /* Rounded corners */
+            padding: 20px;
+            /* Adds inner padding */
+            text-align: left;
+            /* Aligns text to the left */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Adds shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            /* Smooth hover effects */
+        }
+
+        .content-box {
+            top: 40px;
+            /* Vertical positioning */
+            left: 200px;
+            /* Horizontal positioning */
+        }
+
+        .content-box2 {
+            bottom: 293px;
+            /* Position relative to the bottom */
+            left: 850px;
+            /* Horizontal positioning */
+        }
+
+        .content1,
+        .content2 {
+            font-weight: bold;
+            /* Bold headers */
+            color: #300569;
+            /* Dark purple text */
+        }
+
+        /* Table styles */
+        table {
+            width: 100%;
+            /* Full width */
+            border-collapse: collapse;
+            /* Removes gaps between borders */
+            color: black;
+            /* Default text color */
+        }
+
+        table th,
+        table td {
+            padding: 10px;
+            /* Spacing inside cells */
+            border: 1px solid #300569;
+            /* Purple border */
+            text-align: left;
+            /* Left-aligned content */
+        }
+
+        table th {
+            background-color: #8c06da;
+            /* Purple header background */
+            color: white;
+            /* White text */
+        }
+
+        /* Button styles */
+        button {
+            background-color: #8c06da;
+            /* Purple background */
+            color: white;
+            /* White text */
+            border: none;
+            /* Removes border */
+            padding: 10px 20px;
+            /* Adds padding */
+            font-size: 16px;
+            /* Medium text size */
+            border-radius: 20px;
+            /* Rounded corners */
+            cursor: pointer;
+            /* Pointer cursor */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            /* Smooth effects */
+        }
+
+        button:hover {
+            background-color: #6c039b;
+            /* Darker purple on hover */
+            transform: translateY(-3px);
+            /* Moves slightly up */
+        }
+
+        button:active {
+            background-color: #5a027f;
+            /* Even darker purple on click */
+            transform: translateY(2px);
+            /* Moves slightly down */
+        }
+
+        /* Footer styles */
+        .footer {
+            background-color: black;
+            /* Dark background */
+            color: white;
+            /* White text */
+            text-align: center;
+            /* Centered content */
+            padding: 10px 0;
+            /* Vertical padding */
+            position: fixed;
+            /* Sticks to the bottom */
+            bottom: 0;
+            /* Aligns to the bottom */
+            width: 100%;
+            /* Full width */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header section with logo and title -->
+    <div class="header">
+        <img src="logo.png">
+        Synergy CyberAccount
+    </div>
+
+    <!-- Profile icon -->
+    <div class="profile-icon">
+        <img src="Inori.jpg" alt="Profile Icon">
+        <span>Hello Ms.Yuzuhira!</span>
+    </div>
+
+    <!-- Sidebar navigation -->
+    <div class="sidebar">
+        <a href="Home.html">Home</a>
+        <a href="Profile.html">Profile</a>
+        <a href="StudyLoad.html">Study Loads</a>
+        <a href="HomePage.html">Logout</a>
+    </div>
+
+    <!-- Main content area -->
+    <div class="main-content">
+        <h1 style="color: #300569; text-align: center;">Welcome to Your Dashboard</h1>
+
+        <!-- Content box for recent activities -->
+        <div class="content-box">
+            <h2 class="content1">Recent Activities</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Activity</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nov 25, 2024</td>
+                        <td>Programming Quiz</td>
+                        <td style="color: green;">Completed</td>
+                    </tr>
+                    <tr>
+                        <td>December 2, 2024</td>
+                        <td>Defense</td>
+                        <td style="color: blue;">In Progress</td>
+                    </tr>
+                    <tr>
+                        <td>Nov 21-23 2024</td>
+                        <td>Intramurals</td>
+                        <td style="color: green;">Completed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Content box for quick actions -->
+        <div class="content-box2">
+            <h2 class="content2">Quick Actions</h2>
+            <p style="color: black; font-weight: bold;">Access your study loads and manage your academic tasks easily.
+            </p>
+            <button onclick="window.location.href='StudyLoad.html';">View Study Loads</button>
+        </div>
+    </div>
+
+    <!-- Footer section -->
+    <div class="footer">© 2024 Synergy Academy</div>
+</body>
+
+</html>
+
+<!--Comments galore T^T) unta worth it and dili malimtan-->

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        /*global style*/
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(white, #8c06da);
+            color: black;
+            overflow: hidden; /*This function helps me a lot just to remove that white gap between the footer and the body itself (yey! s) */
+        }
+        /*Header style*/
+        .header {
+            background-color: #8c06da;
+            color: white;
+            padding: 25px 20px;
+            text-align: left;
+            font-size: 36px;
+            font-weight: bold;
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            gap: 20px;
+        }
+
+        .header img {
+            height: 50px;
+            border-radius: 50%;
+            width: auto;
+
+        }
+        /*Style for the profile icon and "Hello Ms.Yuzuhira" in the upper right*/
+        .profile-icon {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            pointer-events: none;
+            cursor: default;
+        }
+
+        .profile-icon img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        .profile-icon span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+
+        /*Sidebar Style*/
+        .sidebar {
+            background-color: black;
+            color: white;
+            width: 200px;
+            height: 100vh;
+            position: fixed;
+            top: 100px;
+            left: 0;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #8c06da;
+        }
+
+        .main-content {
+            margin-left: 200px;
+            padding: 20px;
+        }
+
+        /*Student info Style*/
+        .profile-box {
+            position: relative;
+            left: 580px;
+            width: 300px;
+            background-color: rgba(48, 5, 105, 0.1);
+            border: 1px solid rgba(48, 5, 105, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid rgba(48, 5, 105, 0.5);
+
+        }
+
+        .profile-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #300569;
+            margin-bottom: 5px;
+        }
+
+        .profile-info {
+            font-size: 16px;
+            color: black;
+            margin-bottom: 15px;
+        }
+
+        .profile-button {
+            background-color: #8c06da;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 20px;
+        }
+
+
+
+        /*Student Information Box*/
+        .content-box {
+            position: relative;
+            top: 40px;
+            left: 200px;
+            height: 290px;
+            width: 450px;
+            background-color: rgba(48, 5, 105, 0.1);
+            border: 1px solid rgba(48, 5, 105, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /*Education Information Box*/
+        .content-box2 {
+            position: relative;
+            bottom: 293px;
+            left: 850px;
+            height: 290px;
+            width: 450px;
+            background-color: rgba(48, 5, 105, 0.1);
+            border: 1px solid rgba(48, 5, 105, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left
+        }
+
+        /*Title inside the box*/
+        .content1 {
+            font-weight: bold;
+            color: #300569;
+        }
+
+        .content2 {
+            font-weight: bold;
+            color: #300569;
+        }
+
+
+
+        .footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="logo.png">
+        Synergy CyberAccount
+    </div>
+    </div>
+    <div class="profile-icon">
+        <img src="Inori.jpg" alt="Profile Icon">
+        <span>Hello Ms.Yuzuhira!</span>
+    </div>
+    </div>
+
+    <div class="sidebar">
+        <a href="Home.html">Home</a>
+        <a href="Profile.html">Profile</a>
+        <a href="StudyLoad.html">Study Loads</a>
+        <a href="HomePage.html">Logout</a>
+    </div>
+
+    <div class="main-content">
+        <div class="profile-box">
+            <img src="Inori.jpg" alt="Profile Picture" class="profile-image">
+            <h2 class="profile-name">Inori Yuzuhira</h2>
+            <p class="profile-info"> Student | Tech Enthusiast</p>
+        </div>
+
+        <div class="content-box">
+            <h2 class="content1">Student Information</h2>
+            <p style="color: black; font-weight: bold;">Birthday: April 24, 2005.</p>
+            <p style="color: black; font-weight: bold;">Adress: Hoshigawa Prefecture, Japan</p>
+            <p style="color: black; font-weight: bold;">Phone Number: +81 90-1234-5678</p>
+            <p style="color: black; font-weight: bold;">Civil Status: Single</p>
+
+
+
+        </div>
+        <div class="content-box2">
+            <h2 class="content2">Education Information</h2>
+            <p style="color: black; font-weight: bold;">Primary: Shizuku Elementary School (2018)</p>
+            <p style="color: black; font-weight: bold;">Junior: Hoshigawa Municipal Junior High School (2021)</p>
+            <p style="color: black; font-weight: bold;">Senior: Hoshigawa High School (2024)</p>
+            <p style="color: black; font-weight: bold;">College(Current): Synergy Academy</p>
+        </div>
+    </div>
+
+
+    <div class="footer">© 2024 Synergy Academy</div>
+
+    <script>
+    </script>
+</body>
+
+</html>
